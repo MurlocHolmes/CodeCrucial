@@ -1,0 +1,37 @@
+{% load static from staticfiles %}
+<div class="container">
+    <div class="row">
+    {% for tile in hometiles %}
+        <div id="project-{{tile.id}}" class="col-sm-4 project-tile">
+            <div class="project-image-wrapper">
+                <div class="project-image" style="background-image:url('{% static tile.image %}');">
+                </div>
+            </div>
+            <div class="project-caption">
+                <h3>{{tile.project.title}}</h3>
+                <p>{{tile.project.description|truncatechars:150|safe}}</p>
+                <div class="project-details-button"><a href="{{tile.title}}" data-toggle="modal" data-target="#project{{tile.id}}DetailModal" class="project-details-link btn btn-primary" role="button">Details</a></div>
+            </div>
+        </div>
+        <div class="modal fade" id="project{{tile.id}}DetailModal" tabindex="-1" role="dialog" aria-labelledby="project{{tile.id}}DetailModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectDetailModalLabel">{{tile.project.title}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {{tile.project.description |safe}}
+                        <a href="{{tile.project.link}}">Link</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

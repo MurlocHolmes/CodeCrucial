@@ -1,0 +1,19 @@
+
+/****************
+    Contact
+****************/
+
+#contact-sent {
+    opacity:0;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align:center;
+}
+
+#contact-sent.active {
+    opacity:1;
+}
