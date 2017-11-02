@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+//8E793E AD974F 231F20 EAEAEA
+$brand-primary: #ECE8D3;
+$brand-secondary: #2E303E;
+$brand-tertiary: #493932;
+$brand-quadriary: #4F6339;
+$font-size: 16px;
+$font-weight: 200;
+$section-height:500px;
+
+
+/*
+$brand-primary: #2E303E;
+$brand-secondary: #493932;
+$brand-tertiary: #4F6339;
+$brand-quadriary: #ECE8D3;
+*/
+/*
+
+$brand-primary: #49205B;
+$brand-secondary: #D9E254;
+$brand-tertiary: #805BA5;
+$brand-quadriary: #805BA5;
+*/
+body {
+  height: 100vh;
+  background-color: $brand-primary;
+  color: $brand-secondary;
+  font-size:$font-size;
+}
+
+#root {
+	overflow:hidden;
+}
+
+h1, h4, p, h6 {
+	font-weight:$font-weight !important;
+}
+
+.section-container {
+	background-color:$brand-primary;
+	height:$section-height;
+}
+
+.home-container {
+	margin-top:56px;
+}
+
+.section-header {
+	margin-bottom:25px;
+}
+
+.header {
+	background-color:$brand-tertiary;
+	.navbar-nav {
+		margin:0 auto;
+		a{
+			color:$brand-primary;
+			font-size:2em;
+			font-weight:800;
+			font-variant:small-caps;
+		}
+	}
+}
+
+@import 'components/projects/styles.scss';
+@import 'components/profile/styles.scss';
+@import 'components/welcome/styles.scss';
+@import 'components/footer/styles.scss';

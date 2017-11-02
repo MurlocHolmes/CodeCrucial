@@ -1,0 +1,50 @@
+$brand-primary: if(variable-exists(brand-primary), $brand-primary, beige);
+$brand-secondary: if(variable-exists(brand-secondary), $brand-secondary, red);
+$brand-tertiary: if(variable-exists(brand-tertiary), $brand-tertiary, black);
+$brand-quadriary: if(variable-exists(brand-quadriary), $brand-quadriary, black);
+$font-size: if(variable-exists(font-size), $font-size, 12px);
+$section-height: if(variable-exists(section-height), $section-height, #333);
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+.welcome-container {
+	height:$section-height*.5;
+
+	* {
+		@include transition(all .75s ease-in-out);
+	}
+	
+	.contact-wrapper {
+		margin:0 auto;
+		overflow-y:hidden;
+		height:105px;
+		.contact-link {
+			width:25%;
+			float:left;
+			display:block;
+			text-align:center;
+			font-variant:small-caps;
+			i {
+				width:100%;
+				color:$brand-quadriary;
+			}
+			a {
+				width:100%;
+				color:$brand-quadriary;
+			}
+		}
+		& .inactive {
+			margin-left: 100%;
+			left:0;
+			opacity:0;
+		}
+		& .last-activated {
+			margin-right:-100%;
+		}
+	}
+}

@@ -1,0 +1,84 @@
+// Generic variables
+$brand-primary: if(global-variable-exists(brand-primary), $brand-primary, beige);
+$brand-secondary: if(global-variable-exists(brand-secondary), $brand-secondary, red);
+$brand-tertiary: if(global-variable-exists(brand-tertiary), $brand-tertiary, black);
+$brand-quadriary: if(variable-exists(brand-quadriary), $brand-quadriary, black);
+$font-size: if(global-variable-exists(font-size), $font-size, 12px);
+$section-height: if(global-variable-exists(section-height), $section-height, 400px);
+
+// Skill specific variables
+$active-skill: if(global-variable-exists(active-skill), $active-skill, $brand-tertiary);
+$skill-high: if(global-variable-exists(skill-high), $skill-high, green);
+$skill-medium: if(global-variable-exists(skill-medium), $skill-medium, yellow);
+$skill-low: if(global-variable-exists(skill-low), $skill-low, red);
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+.profile-container {
+	height:$section-height*.75;
+	position:scroll;
+	.skill-wrapper {
+		height:330/500*$section-height;
+		.skill-container {
+			float:left;
+			height:100%;
+		}
+		.skill-list {
+			overflow:auto;
+			.skill-block {
+				height:40px;
+				float:left;
+				margin-bottom:15px;
+				.btn {
+					width:100%;
+					background-color:transparent;
+					@include transition(all .4s ease-in-out);
+
+					.button-text {
+						font-weight:200;
+					}
+				}
+				.btn:hover {
+					background-color:$brand-quadriary;
+					border-color:$brand-primary;
+					color:$brand-primary;
+				}
+			}
+			.active-skill {
+				.btn {
+					background-color:$brand-quadriary;
+					border-color:$brand-primary;
+					color:$brand-primary;
+				}
+			}
+		}
+		.skill-description {
+			display:flex;
+			align-items:center;
+			.description-text {
+				position:absolute;
+				opacity:1;
+				p {
+					margin-left: 25px;
+					text-align:justify;
+				}
+			}
+			.new-description {
+				opacity: 0;
+			}
+			.old-description.text-animation {
+				opacity:0;
+			}
+			.new-description.text-animation {
+				opacity:1;
+			}
+			.text-animation {
+				@include transition(opacity 1s ease-in-out);
+			}
+		}
+		
+	}
+}

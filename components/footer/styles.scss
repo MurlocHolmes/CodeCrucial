@@ -1,0 +1,20 @@
+$brand-primary: if(variable-exists(brand-primary), $brand-primary, beige);
+$brand-secondary: if(variable-exists(brand-secondary), $brand-secondary, red);
+$brand-tertiary: if(variable-exists(brand-tertiary), $brand-tertiary, black);
+$frame-color: if(variable-exists(frame-color), $frame-color, black);
+$font-size: if(variable-exists(font-size), $font-size, 12px);
+$section-height: if(variable-exists(section-height), $section-height, #333);
+$tech-background: green;
+$tech-font-color: blue;
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+.footer {
+	width:100%;
+	height:50px;
+}
