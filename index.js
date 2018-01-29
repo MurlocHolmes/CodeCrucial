@@ -7,7 +7,7 @@ import AppStore from './components/redux/reducers';
 import './styles.scss';
 
 
-let store = createStore(AppStore, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+let store = createStore(AppStore)
 
 ReactDOM.render(
 	<Provider store={store}>

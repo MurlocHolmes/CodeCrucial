@@ -6,7 +6,7 @@ export const ProjectModal = (props) => {
     return (
         <div className="project-modal-wrapper">
           <button type="button" className="btn btn-primary" data-toggle="modal" data-target={"#" + index + "-project-modal"}>
-            Click here for more deets.
+            Click here for more details.
           </button>
           <div className="modal fade" id={index + "-project-modal"} tabindex="-1" role="dialog" aria-labelledby={index + "-project-label"} aria-hidden="true">
             <div className="modal-dialog" role="document">
