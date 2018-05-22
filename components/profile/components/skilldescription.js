@@ -4,7 +4,7 @@ export const SkillDescription = (props) => {
 	const { skill, oldSkill, animateDescription, getSkillStyle } = props;
 	animateDescription();
 	return ( 
-	    <div id="skill-description" className="skill-description skill-container col-lg-6 col-lg-6 col-md-6 col-sm-8 col-xs-8">
+	    <div id="skill-description" className="skill-description skill-container col-md-6 col-sm-12">
 	    	<div className={getSkillStyle("old")}>
 		    	<h1>{oldSkill.title}</h1>
 		    	<h5>{oldSkill.level}</h5>

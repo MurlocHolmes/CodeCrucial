@@ -13,9 +13,9 @@ $section-height: if(variable-exists(section-height), $section-height, #333);
 }
 
 .welcome-container {
-	height:$section-height*.5;
+	//height:$section-height*.5;
 
-	* {
+	.has-transition {
 		@include transition(all .75s ease-in-out);
 	}
 	
@@ -23,6 +23,7 @@ $section-height: if(variable-exists(section-height), $section-height, #333);
 		margin:0 auto;
 		overflow-y:hidden;
 		height:105px;
+		min-width:60%;
 		.contact-link {
 			width:25%;
 			float:left;

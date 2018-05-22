@@ -38,8 +38,8 @@ h1, h4, p, h6 {
 }
 
 .section-container {
-	background-color:$brand-primary;
-	height:$section-height;
+	display: flex;
+	flex-direction: column;
 }
 
 .home-container {

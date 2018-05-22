@@ -73,7 +73,7 @@ export class Profile extends Component {
 					<h4 className="section-header">
 						This is a list of some of the things I'm good at.
 					</h4>
-			  		<div className="container skill-wrapper">
+			  		<div className="container skill-wrapper row">
 				    	<SkillButtons 
 				    		skills={Skills} 
 				    		active={skill.title} 

@@ -13,17 +13,17 @@ export const ContactButtons = (props) => {
 	}
 	  return (
 	    <div className="contact-wrapper col-lg-8 col-md-8 col-sm-10 col-xs-10">
-			<div className={"contact-link resume-contact " + (contactsActivated > 0 ? "" : "inactive") + " " + (contactsActivated === 1 ? "last-activated" : "")}>
-				<a href={Resume} target="_blank"><i className="fa fa-5x fa-file" aria-hidden="true"></i>Resume</a>
+			<div className={"contact-link resume-contact " + (contactsActivated > 0 ? "has-transition" : "inactive") + " " + (contactsActivated === 1 ? "last-activated" : "")}>
+				<a href={Resume} target="_blank"><i className="fa fa-4x fa-file" aria-hidden="true"></i>Resume</a>
 			</div>
-			<div className={"contact-link github-contact " + (contactsActivated > 1 ? "" : "inactive") + " " + (contactsActivated === 2 ? "last-activated" : "")}>
-				<a href="https://github.com/murlocholmes"><i className="fa fa-5x fa-github" aria-hidden="true"></i>Github</a>
+			<div className={"contact-link github-contact " + (contactsActivated > 1 ? "has-transition" : "inactive") + " " + (contactsActivated === 2 ? "last-activated" : "")}>
+				<a href="https://github.com/murlocholmes"><i className="fa fa-4x fa-github" aria-hidden="true"></i>Github</a>
 			</div>
-			<div className={"contact-link linkedin-contact " + (contactsActivated > 2 ? "" : "inactive") + " " + (contactsActivated === 3 ? "last-activated" : "")}>	
-				<a href="https://www.linkedin.com/in/taylor-dobson-18395a96/"><i className="fa fa-5x fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+			<div className={"contact-link linkedin-contact " + (contactsActivated > 2 ? "has-transition" : "inactive") + " " + (contactsActivated === 3 ? "last-activated" : "")}>
+				<a href="https://www.linkedin.com/in/taylor-dobson-18395a96/"><i className="fa fa-4x fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
 			</div>
-			<div className={"contact-link email-contact " + (contactsActivated > 3 ? "" : "inactive")}>
-				<a href="mailto:jtaylordobson@gmail.com"><i className="fa fa-5x fa-envelope" aria-hidden="true"></i>E-mail</a>
+			<div className={"contact-link email-contact " + (contactsActivated > 3 ? "has-transition" : "inactive")}>
+				<a href="mailto:jtaylordobson@gmail.com"><i className="fa fa-4x fa-envelope" aria-hidden="true"></i>E-mail</a>
 			</div>
 		</div>
 	  )

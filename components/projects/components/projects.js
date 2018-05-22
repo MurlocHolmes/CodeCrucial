@@ -10,18 +10,47 @@ export class Projects extends Component {
 
 	constructor(props) {
 	  	super(props);
-	  	this.getCardStyle = this.getCardStyle.bind(this);
-	  	this.checkAndIncrementPosition = this.checkAndIncrementPosition.bind(this);
-    	this.props.initializePosition(initial_projects.length - 3);
-    	this.props.setProjects(initial_projects);
+        this.state = { width: 0, height: 0 };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+        this.getCardStyle = this.getCardStyle.bind(this);
+        this.checkAndIncrementPosition = this.checkAndIncrementPosition.bind(this);
+        this.props.initializePosition(initial_projects.length - this.getVisibleCardCount());
+        this.props.setProjects(initial_projects);
+	}
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+    }
+
+    getVisibleCardCount() {
+		let count = 1;
+		const width = this.state['width'];
+		if(width > 768) {
+            count = 3;
+		} else if(width > 640) {
+            count = 2;
+		} else {
+            count = 1;
+		}
+		return count;
 	}
 
 	getCardStyle(index) {
+		let count = this.getVisibleCardCount();
 		const { position } = this.props;
 	    const offset = index-position;
-	    const visible = (-1 < offset && offset < 3 ? 1 : 0);
+	    const visible = (-1 < offset && offset <= initial_projects.length - count+1 ? 1 : 0);
 	    const cardStyle = {
-	        marginLeft:offset*(100/3)+"%", 
+	        marginLeft:offset*(100/count)+"%",
 	        opacity:visible
 	    };
 	    return cardStyle;
